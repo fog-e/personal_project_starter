@@ -5,9 +5,12 @@ import os
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def generate_text(prompt):
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are an assistant."},
+            {"role": "user", "content": prompt},
+        ],
         max_tokens=150
     )
-    return response.choices[0].text.strip()
+    return response.choices[0].message["content"].strip()
