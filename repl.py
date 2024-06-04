@@ -1,4 +1,4 @@
-from llm_interaction.py import generate_text
+from llm_interaction import generate_text
 from file_io import read_file, write_file
 
 def start_repl():
