@@ -5,7 +5,7 @@ def generate_text(prompt):
         model="gpt-3.5-turbo",  # Update this to the specific model you want to use
         messages=[
             {"role": "system", "content": "You are an assistant."},
-            {"role": "user", "content": prompt}
+            {"role": "user", "content": prompt},
         ],
         max_tokens=150
     )
